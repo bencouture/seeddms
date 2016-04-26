@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/seeddms-5.0.3
+
+    ErrorLog /var/log/apache2/seeddms_error.log
+    CustomLog /var/log/apache2/seeddms_access.log combined
+    <Directory />
+        Require all granted
+    </Directory>
+
+    Alias /seeddms "/var/www/html/seeddms-5.0.3"
+    <Directory "/var/www/html/seeddms-5.0.3">
+        DirectoryIndex index.php
+        AllowOverride All
+        Order deny,allow
+        Deny from all
+        Allow from all
+    </Directory>
+</VirtualHost>
